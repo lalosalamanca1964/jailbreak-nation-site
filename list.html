@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JBN - Values</title>
+    <link rel="stylesheet" href="list.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Jockey+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <h1>
+            Jailbreak Nation
+        </h1>
+
+        <img src="icons/burger.png" id="burger" onclick="burgerFunction()">
+
+        <div id="links">
+        <a href="list.html?items">
+            <div id="values-flex">
+                <div id="values-div">
+                    <img src="icons/values-chart.png">
+                </div>
+                <span>Values</span>
+            </div>
+        </a>
+        <a href="https://discord.gg/jbn">   
+            <div id="discord-flex">
+                <div id="discord-div">
+                    <img src="icons/discord.png">
+                </div>
+                <span>Discord</span>
+            </div>    
+        </a>
+        <a href="index.html">
+            <div id="info-flex">
+                <div id="info-div">
+                    <img src="icons/home.png">
+                </div>
+                <span>Home</span>
+            </div>
+        </a>
+        </div>
+    </nav>
+    <button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
+    <div id="burger-container">
+        <a href="list.html?items" class="burger-cell">
+        <div>
+            Values
+        </div>
+        </a>
+        <a href="https://discord.gg/jbn" class="burger-cell">
+        <div>
+            Discord
+        </div>
+        </a>
+        <a href="index.html" class="burger-cell">
+        <div>
+            Home
+        </div>
+        </a>
+    </div>
+    <div id="main-flex">
+        <div id="sorting-flex">
+            <div id="search-width">
+            <input type="text" placeholder="Find an item..." id="user-search">
+            <button onclick="getOffset(document.getElementById('user-search').value)" id="submit-btn">
+                Search
+            </button>
+            </div>
+            <a href="list.html?rims">Rims</a>
+            <a href="list.html?textures">Textures</a>
+            <a href="list.html?colors">Colors</a>
+            <a href="list.html?hypers">Hypers</a>
+            <a href="list.html?spoilers">Spoilers</a>
+            <a href="list.html?items">Vehicles</a>
+        </div>
+
+    <div id="loading-container">
+        <div id="loading-spinner">
+        </div>
+    </div>
+
+    <div id="items-flex">
+        
+
+    </div>
+    
+    </div>
+<script src="value-list.js" defer></script>
+</body>
+</html>
