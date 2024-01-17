@@ -39,7 +39,6 @@ a {
   }
 
 nav {
-    padding-top: 50px;
     display: flex;
     position: sticky;
     position: -webkit-sticky;
