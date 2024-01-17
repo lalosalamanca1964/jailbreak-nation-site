@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JBN - Home</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Jockey+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <h1>
+            Jailbreak Nation
+        </h1>
+
+        <img src="icons/burger.png" id="burger" onclick="burgerFunction()">
+
+        <div id="links">
+        <a href="list.html?items">
+            <div id="values-flex">
+                <div id="values-div">
+                    <img src="icons/values-chart.png">
+                </div>
+                <span>Values</span>
+            </div>
+        </a>
+        <a href="https://discord.gg/jbn">   
+            <div id="discord-flex">
+                <div id="discord-div">
+                    <img src="icons/discord.png">
+                </div>
+                <span>Discord</span>
+            </div>    
+        </a>
+        <a href="index.html">
+            <div id="info-flex">
+                <div id="info-div">
+                    <img src="icons/home.png">
+                </div>
+                <span>Home</span>
+            </div>
+        </a>
+        </div>
+    </nav>
+    <div id="burger-container">
+        <a href="list.html?items" class="burger-cell">
+        <div>
+            Values
+        </div>
+        </a>
+        <a href="https://discord.gg/jbn" class="burger-cell">
+        <div>
+            Discord
+        </div>
+        </a>
+        <a href="index.html" class="burger-cell">
+        <div>
+            Home
+        </div>
+        </a>
+    </div>
+    <div id="main-div">
+        <div id="top-div">
+            <div id="search-div">
+                <img src="images/jbn.gif">
+                <h3>
+                    JBN Has Daily Giveaways!
+                </h3>
+                <a href="https://discord.gg/jbn">
+                <div id="discord-div-s">
+                    <img src="images/discord-img.png">
+                    <span>Join Now</span>
+                </div>
+                </a>
+            </div>
+        </div>
+        <div id="display-div">
+            <div id="display-div-left">
+                <div id="quick-search-info">
+                    <h3>
+                        Quick Search
+                    </h3>
+                    <span>
+                        Enter the name of the vehicle you want to find info about and click submit!
+                    </span>
+                </div>
+                <form id="form" onsubmit="return false;">
+                    <input type="text" id="user-input">
+                    <input type="submit" id="submit-bar" onclick="displayItemInfo()">
+                </form>
+                <div id="error-box">
+
+                </div>
+            </div>
+            <img src="" id="display-item-image">
+            <div id="answers-box">
+            <span id="value-box"></span>
+            <span id="duped-box"></span>
+            <span id="demand-box"></span>
+            <span id="status-box"></span>
+            <span id="unique-box"></span>
+            </div>
+        </div>
+        
+        <div id="search-div-2">
+            <h3>Jailbreak Nation</h3>
+            <p>
+                JBN is owned by <i>Fletch14G37</i> and <i>atharvawyd</i>. Their server offers tons of giveaways, space for you to trade, excellent staff, and so much more.
+            </p>
+            <p>
+                This site hosts JBN's extensive value list. <a href="list.html?items">Check it out here</a>
+            </p>
+        </div>
+    </div>
+<script src="index.js"></script>
+</body>
+</html>
