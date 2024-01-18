@@ -1484,18 +1484,23 @@ if (urlParams.has('spoilers')) {
 
 function getOffset(el) {
     console.log('Input value:', el);
-    for (let i = 0; i < itemsOrdArr.length; i++) {
-        console.log('Checking element:', itemsOrdArr[i]);
-        if (/^[a-zA-Z0-9\-_]+$/.test(el)) {
-            if (el.toLowerCase().includes(itemsOrdArr[i]) || itemsOrdArr[i].includes(el.toLowerCase())) {
-                let el = itemsOrdArr[i];
-                const rect = document.getElementById(el).getBoundingClientRect();
+    if (/^[a-zA-Z0-9\-_ ]+$/.test(el)) {
+        const elWords = el.toLowerCase().trim().split(' ');
+
+        for (let i = 0; i < itemsOrdArr.length; i++) {
+            console.log('Checking element:', itemsOrdArr[i]);
+            const itemName = itemsOrdArr[i];
+
+            if (elWords.some(word => itemName.includes(word))) {
+                const rect = document.getElementById(itemName).getBoundingClientRect();
                 window.scrollTo({ top: (rect.top - 200) + window.scrollY, behavior: 'smooth' });
-                return
+                return;
             }
         }
+        console.log('Element not found for input:', el);
+    } else {
+        console.log('Invalid Input');
     }
-    console.log('Element not found for input:', el);
 }
 
 let listContainers = document.getElementsByClassName('item-container');
