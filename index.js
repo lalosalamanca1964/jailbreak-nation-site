@@ -365,8 +365,8 @@ function displayItemInfo() {
             for (let i = 0; i < itemsOrdArr.length; i++) {
                 if (userInput.includes(itemsOrdArr[i])) {
                     var userInput = itemsOrdArr[i];
-                    document.getElementById('value-box').innerHTML = (`Value - ${items[userInput].value}`);
-                    document.getElementById('duped-box').innerHTML = (`Duped Value - ${items[userInput].dupedValue}`);
+                    document.getElementById('value-box').innerHTML = (`Value - ${items[userInput].value.toLocaleString()}`);
+                    document.getElementById('duped-box').innerHTML = (`Duped Value - ${items[userInput].dupedValue.toLocaleString()}`);
                     document.getElementById('demand-box').innerHTML = (`Demand - ${items[userInput].demand}`);
                     document.getElementById('status-box').innerHTML = (`Status - ${items[userInput].status}`);
                     document.getElementById('unique-box').innerHTML = (`Rarity - ${items[userInput].monthlyUnique}`);
