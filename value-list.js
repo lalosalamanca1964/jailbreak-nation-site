@@ -1360,8 +1360,8 @@ function generateItemHTML(itemKey, itemDetails) {
                 <h1>${displayName}</h1>                
             </div>
             <div class="item-container-right">
-                <p>Value - ${itemDetails.value}</p>
-                <p>Duped Value - ${itemDetails.dupedValue}</p>
+                <p>Value - ${itemDetails.value.toLocaleString()}</p>
+                <p>Duped Value - ${itemDetails.dupedValue.toLocaleString()}</p>
                 <p>Demand - ${itemDetails.demand}</p>
                 <p>Status - ${itemDetails.status}</p>
                 <p>Rarity - ${itemDetails.monthlyUnique}</p>
