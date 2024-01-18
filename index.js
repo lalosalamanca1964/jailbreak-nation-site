@@ -361,28 +361,28 @@ getValuesArr();
 
 function displayItemInfo() {
     var userInput = document.getElementById("user-input").value.toLowerCase();
-        if (/^[a-zA-Z0-9\-_]+$/.test(userInput)) {
-            for (let i = 0; i < itemsOrdArr.length; i++) {
-                if (userInput.includes(itemsOrdArr[i])) {
-                    var userInput = itemsOrdArr[i];
-                    document.getElementById('value-box').innerHTML = (`Value - ${items[userInput].value.toLocaleString()}`);
-                    document.getElementById('duped-box').innerHTML = (`Duped Value - ${items[userInput].dupedValue.toLocaleString()}`);
-                    document.getElementById('demand-box').innerHTML = (`Demand - ${items[userInput].demand}`);
-                    document.getElementById('status-box').innerHTML = (`Status - ${items[userInput].status}`);
-                    document.getElementById('unique-box').innerHTML = (`Rarity - ${items[userInput].monthlyUnique}`);
-                    document.getElementById('error-box').style.display = ('none');
-                    document.getElementById('display-item-image').style.display = ('block');
-                    document.getElementById('display-item-image').src = ('images/' + `${userInput}` + '.png');
-                    return
-                }
-                else {
-                    document.getElementById('error-box').style.display = ('block');
-                    document.getElementById('error-box').innerHTML = ('Invalid Input');
-                }
+    if (/^[a-zA-Z0-9\-_ ]+$/.test(userInput)) {
+        const userInputWords = userInput.trim().split(' ');
+
+        for (let i = 0; i < itemsOrdArr.length; i++) {
+            const itemName = itemsOrdArr[i];
+
+            if (userInputWords.some(word => itemName.includes(word))) {
+                document.getElementById('value-box').innerHTML = (`Value - ${items[itemName].value.toLocaleString()}`);
+                document.getElementById('duped-box').innerHTML = (`Duped Value - ${items[itemName].dupedValue.toLocaleString()}`);
+                document.getElementById('demand-box').innerHTML = (`Demand - ${items[itemName].demand}`);
+                document.getElementById('status-box').innerHTML = (`Status - ${items[itemName].status}`);
+                document.getElementById('unique-box').innerHTML = (`Rarity - ${items[itemName].monthlyUnique}`);
+                document.getElementById('error-box').style.display = ('none');
+                document.getElementById('display-item-image').style.display = ('block');
+                document.getElementById('display-item-image').src = ('images/' + `${itemName}` + '.png');
+                return;
             }
-        } else {
-        console.log('what u doin huh?')
+        }
+        console.log('Item not found');
+    } else {
+        console.log('Invalid Input');
         document.getElementById('error-box').style.display = ('block');
         document.getElementById('error-box').innerHTML = ('Invalid Input');
-        }        
+    }
 }
