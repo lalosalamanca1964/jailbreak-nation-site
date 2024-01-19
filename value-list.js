@@ -101,6 +101,13 @@ items: {
         status: 'Stable',
         monthlyUnique: 'Common'
     },
+    proto: {
+        value: 12500000,
+        dupedValue: 10000000,
+        demand: 'High',
+        status: 'Stable',
+        monthlyUnique: 'Uncommon'
+    },
     cel: {
         value: 22500000,
         dupedValue: 20000000,
@@ -128,13 +135,6 @@ items: {
         demand: 'Low',
         status: 'Stable',
         monthlyUnique: 'Extremely rare'
-    },
-    drone: {
-        value: 850000,
-        dupedValue: 'N/A',
-        demand: 'Low',
-        status: 'Stable',
-        monthlyUnique: 'Common'
     },
     escape: {
         value: 200000,
@@ -206,6 +206,13 @@ items: {
         status: 'Stable',
         monthlyUnique: 'Common'
     },
+    power1: {
+        value: 5500000,
+        dupedValue: 'N/A',
+        demand: 'Very High',
+        status: 'Stable',
+        monthlyUnique: 'Rare'
+    },
     mighty: {
         value: 150000,
         dupedValue: 'N/A',
@@ -234,6 +241,13 @@ items: {
         status: 'Stable',
         monthlyUnique: 'Common'
     },
+    drone: {
+        value: 850000,
+        dupedValue: 'N/A',
+        demand: 'Low',
+        status: 'Stable',
+        monthlyUnique: 'Common'
+    },
     poseidon: {
         value: 2500000,
         dupedValue: 'N/A',
@@ -247,20 +261,6 @@ items: {
         demand: 'Very Low',
         status: 'Stable',
         monthlyUnique: 'Common'
-    },
-    power1: {
-        value: 5500000,
-        dupedValue: 'N/A',
-        demand: 'Very High',
-        status: 'Stable',
-        monthlyUnique: 'Rare'
-    },
-    proto: {
-        value: 12500000,
-        dupedValue: 10000000,
-        demand: 'High',
-        status: 'Stable',
-        monthlyUnique: 'Uncommon'
     },
     raptor: {
         value: 15000000,
@@ -1491,7 +1491,7 @@ function getOffset(el) {
             console.log('Checking element:', itemsOrdArr[i]);
             const itemName = itemsOrdArr[i];
 
-            if (elWords.some(word => itemName.includes(word))) {
+            if (elWords.some(word => itemName.includes(word)) || itemName.includes(elWords) || el.startsWith(itemName)) {
                 const rect = document.getElementById(itemName).getBoundingClientRect();
                 window.scrollTo({ top: (rect.top - 200) + window.scrollY, behavior: 'smooth' });
                 return;
