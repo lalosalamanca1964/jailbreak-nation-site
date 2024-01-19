@@ -92,6 +92,13 @@ const items =  {
         status: 'Stable',
         monthlyUnique: 'Uncommon'
     },
+    proto: {
+        value: 12500000,
+        dupedValue: 10000000,
+        demand: 'High',
+        status: 'Stable',
+        monthlyUnique: 'Uncommon'
+    },
     brulee: {
         value: 8000000,
         dupedValue: 6500000,
@@ -126,13 +133,6 @@ const items =  {
         demand: 'Low',
         status: 'Stable',
         monthlyUnique: 'Extremely rare'
-    },
-    drone: {
-        value: 850000,
-        dupedValue: 'N/A',
-        demand: 'Low',
-        status: 'Stable',
-        monthlyUnique: 'Common'
     },
     escape: {
         value: 200000,
@@ -204,6 +204,13 @@ const items =  {
         status: 'Stable',
         monthlyUnique: 'Common'
     },
+    power1: {
+        value: 5500000,
+        dupedValue: 'N/A',
+        demand: 'Very High',
+        status: 'Stable',
+        monthlyUnique: 'Rare'
+    },
     mighty: {
         value: 150000,
         dupedValue: 'N/A',
@@ -245,20 +252,6 @@ const items =  {
         demand: 'Very Low',
         status: 'Stable',
         monthlyUnique: 'Common'
-    },
-    power1: {
-        value: 5500000,
-        dupedValue: 'N/A',
-        demand: 'Very High',
-        status: 'Stable',
-        monthlyUnique: 'Rare'
-    },
-    proto: {
-        value: 12500000,
-        dupedValue: 10000000,
-        demand: 'High',
-        status: 'Stable',
-        monthlyUnique: 'Uncommon'
     },
     raptor: {
         value: 15000000,
@@ -323,6 +316,13 @@ const items =  {
         status: 'Stable',
         monthlyUnique: 'Rare'
     },
+    drone: {
+        value: 850000,
+        dupedValue: 'N/A',
+        demand: 'Low',
+        status: 'Stable',
+        monthlyUnique: 'Common'
+    },
     torpedo: {
         value: 35000000,
         dupedValue: 30000000,
@@ -367,7 +367,7 @@ function displayItemInfo() {
         for (let i = 0; i < itemsOrdArr.length; i++) {
             const itemName = itemsOrdArr[i];
 
-            if (userInputWords.some(word => itemName.includes(word))) {
+            if (userInputWords.some(word => itemName.includes(word)) || userInput.includes(itemName) || userInput === itemName) {
                 document.getElementById('value-box').innerHTML = (`Value - ${items[itemName].value.toLocaleString()}`);
                 document.getElementById('duped-box').innerHTML = (`Duped Value - ${items[itemName].dupedValue.toLocaleString()}`);
                 document.getElementById('demand-box').innerHTML = (`Demand - ${items[itemName].demand}`);
