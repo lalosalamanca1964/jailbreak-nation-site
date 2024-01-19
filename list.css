@@ -253,6 +253,7 @@ nav a:hover {
     outline: 10px solid #142d4c;
     border-radius: 25px;
     overflow: auto;
+    filter: drop-shadow(5px 5px 7px #000000);
 }
 
 #sorting-flex a {
@@ -314,6 +315,7 @@ nav a:hover {
     outline: 10px solid #142d4c;
     border-radius: 25px;
     margin-top: 75px;
+    filter: drop-shadow(7px 7px 7px #000000);
 }
 
 .item-container h1 {
