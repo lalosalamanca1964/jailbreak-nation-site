@@ -202,6 +202,7 @@ nav a:hover {
     border: 3px solid #ececec;
     outline: 10px solid #142d4c;
     border-radius: 25px;   
+    filter: drop-shadow(5px 5px 7px #000000);
 }
 
 #search-div img {
@@ -277,6 +278,7 @@ nav a:hover {
     margin-left: auto;
     margin-right: auto;
     border-radius: 25px;
+    filter: drop-shadow(5px 5px 7px #000000);
 }
 
 #display-div-left {
@@ -381,6 +383,7 @@ nav a:hover {
     margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
+    filter: drop-shadow(5px 5px 7px #000000);
 }
 
 #search-div-2 h3 {
