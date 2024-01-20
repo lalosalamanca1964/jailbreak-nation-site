@@ -367,7 +367,7 @@ function displayItemInfo() {
         for (let i = 0; i < itemsOrdArr.length; i++) {
             const itemName = itemsOrdArr[i];
 
-            if (userInputWords.some(word => itemName.includes(word)) || userInput.includes(itemName) || userInput === itemName) {
+            if (userInput == itemName || userInputWords.some(word => itemName.includes(word)) || userInput.includes(itemName)) {
                 document.getElementById('value-box').innerHTML = (`Value - ${items[itemName].value.toLocaleString()}`);
                 document.getElementById('duped-box').innerHTML = (`Duped Value - ${items[itemName].dupedValue.toLocaleString()}`);
                 document.getElementById('demand-box').innerHTML = (`Demand - ${items[itemName].demand}`);

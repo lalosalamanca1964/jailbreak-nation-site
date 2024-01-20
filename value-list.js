@@ -1491,7 +1491,7 @@ function getOffset(el) {
             console.log('Checking element:', itemsOrdArr[i]);
             const itemName = itemsOrdArr[i];
 
-            if (elWords.some(word => itemName.includes(word)) || itemName.includes(elWords) || el.startsWith(itemName)) {
+            if (el == itemName || elWords.some(word => itemName.includes(word)) || itemName.includes(elWords) || el.startsWith(itemName)) {
                 const rect = document.getElementById(itemName).getBoundingClientRect();
                 window.scrollTo({ top: (rect.top - 200) + window.scrollY, behavior: 'smooth' });
                 return;
